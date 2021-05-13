@@ -4,13 +4,13 @@ import argparse
 
 def parse_args():
 	parser = argparse.ArgumentParser()
-	parser.add_argument('--population_1', type=int, 
+	parser.add_argument('--bottle_1_num', type=int, 
 		default='10',
-		help='Number of particles in population 1. Default: 10')
+		help='Number of particles in Bottle 1. Default: 10')
 
-	parser.add_argument('--population_2', type=int, 
+	parser.add_argument('--bottle_2_num', type=int, 
 		default=10000,
-		help='Number of particles in population 2. Default: 10,000')
+		help='Number of particles in Bottle 2. Default: 10,000')
 
 	parser.add_argument('--transition_likelihood', type=float, 
 		default=0.125,
@@ -46,16 +46,19 @@ def main(r1, r2, threshold, iterations):
 		r1 += to_move_R2
 		r2 -= to_move_R2
 
-	plt.plot(r1_list, label="Population 1")
-	plt.plot(r2_list, label="Population 2")
-	plt.xlabel("Iterations")
-	plt.ylabel("Population")
-	plt.legend()
+	fig, ax = plt.subplots()
+
+	ax.plot(r1_list, label="Bottle 1")
+	ax.plot(r2_list, label="Bottle 2")
+	ax.set_xlabel("Simulation Iterations")
+	ax.set_ylabel("Number of Particles")
+	ax.legend()
+	fig.tight_layout()
 	plt.show()
 
 if __name__ == "__main__":
 	global args
 	args = parse_args()
-	main(args.population_1, args.population_2, args.transition_likelihood, args.iterations)
+	main(args.bottle_1_num, args.bottle_2_num, args.transition_likelihood, args.iterations)
 
 
