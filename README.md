@@ -8,7 +8,7 @@ Let me explain what's going on. First, some background: the movement of particle
 
 Given this, let's imagine we have two bottles containing some gas-- let's say Hydrogen. Bottle #1 contains low pressure, and since pressure in a volume is a function of the number of moles of a gas contained within that volume (see the ideal gas law for an explanation as to why), Bottle #1 contains few hydrogen atoms-- let's say it has 10. Bottle #2 contains high pressure, and has a large number of hydrogen atoms-- 10,000.
 
-What happens when we connect the two bottles together? Well, to get the intuition right, let's first make a **massive** assumption here: that particles in either bottle have a certain probability of transitioning between one bottle to another. So for every single particle in both bottles, at every timestep, a dice is rolled– and if the dice hits a certain number, the particle switches botles, and if it doesn't, the particle stays.
+What happens when we connect the two bottles together? Well, to get some intuition, let's first make a **massive** assumption here: that particles in either bottle have a certain probability of transitioning between one bottle to another. So for every single particle in both bottles, at every timestep, a dice is rolled– and if the dice hits a certain number, the particle switches botles, and if it doesn't, the particle stays.
 
 Given this assumption, what should happen? Well, after a short amount of time, we should actually see the number particles in each bottle **equalize**. It'll look something like this:
 
@@ -31,3 +31,5 @@ python equilibrium.py
 #from Bottle #1 to #2, or vice versa, at every timestep. Default: 0.125.
 --iterations INT #Sets the number of simulation iterations. Default: 100.
 ```
+
+*Note: this simulation makes some pretty drastic simplifications, so much so that it can hardly be called a simulation. One of the big things I'm assuming here is that transition probabilities can be modeled a constant probability for all particles – either a particle switches bottles, or it doesn't, with the same probability for every particle. In reality, a particle's likelihood of moving to a certain place will be in part a function of how far away the place is from where the particle currently is. As such, particles closer to the hole between the bottles will have a higher likelihood of transitioning than particles further away from the hole. Please read a physics textbook for an actual education in how this works.
