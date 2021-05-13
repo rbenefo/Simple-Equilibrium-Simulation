@@ -26,8 +26,7 @@ python equilibrium.py
 ```bash
 --bottle_1_num INT #Sets the initial number of particles in Bottle #1. Default: 10.
 --bottle_2_num INT #Sets the initial number of particles in Bottle #2. Default: 10,000.
---transition_likelihood FLOAT#Sets the likelihood of a particle transitioning from Bottle #1 to #2, or vice versa, at every timestep. Default: 0.125.
+--transition_likelihood FLOAT #Sets the likelihood of a particle transitioning 
+#from Bottle #1 to #2, or vice versa, at every timestep. Default: 0.125.
 --iterations INT #Sets the number of simulation iterations. Default: 100.
-```
-
 ```
