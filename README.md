@@ -10,4 +10,24 @@ Given this, let's imagine we have two bottles containing some gas-- let's say Hy
 
 What happens when we connect the two bottles together? Well, to get the intuition right, let's first make a **massive** assumption here: that particles in either bottle have a certain probability of transitioning between one bottle to another. So for every single particle in both bottles, at every timestep, a dice is rolled– and if the dice hits a certain number, the particle switches botles, and if it doesn't, the particle stays.
 
-Given this assumption, what should happen? Well, after a short amount of time, we should actually see the number particles in each bottle **equalize**. That's because in the high pressure bottle, there are so many particles making the same dice rolls. Let's say the transition probability is 10%– then, on average, 10% of the particles should move from Bottle #2 to bottle #1, and back. Since the number of particles in Bottle #2 starts out 10,000 and the number for #1 is 10, then that means that at every time step, 1,000 particles are moving from Bottle #2 to #1, while only 1 particle moves from Bottle #1 to #2.
+Given this assumption, what should happen? Well, after a short amount of time, we should actually see the number particles in each bottle **equalize**. It'll look something like this:
+
+![plot](./outputs/sim1.png)
+
+That's because in the high pressure bottle, there are so many particles making the same dice rolls. Let's say the transition probability is 10%– then, on average, 10% of the particles should move from Bottle #2 to bottle #1, and back. Since the number of particles in Bottle #2 starts out 10,000 and the number for #1 is 10, then that means that at every time step, 1,000 particles are moving from Bottle #2 to #1, while only 1 particle moves from Bottle #1 to #2. Pretty quickly, we see the numebr of particles in each bottle equalizing!
+
+Play with the simulation yourself to experiment with more values. To run the sim, do:
+
+```bash
+python equilibrium.py
+```
+
+**Optional arguments:**
+```bash
+--bottle_1_num INT #Sets the initial number of particles in Bottle #1. Default: 10.
+--bottle_2_num INT #Sets the initial number of particles in Bottle #2. Default: 10,000.
+--transition_likelihood FLOAT#Sets the likelihood of a particle transitioning from Bottle #1 to #2, or vice versa, at every timestep. Default: 0.125.
+--iterations INT #Sets the number of simulation iterations. Default: 100.
+```
+
+```
