@@ -15,7 +15,7 @@ Given this assumption, what should happen? Well, after a short amount of time, w
 <img src="./outputs/sim1.png" height="400" align="center">
  
 
-That's because in the high pressure bottle, there are so many particles making the same dice rolls. Let's say the transition probability is 10%– then, on average, 10% of the particles should move from Bottle #2 to bottle #1, and back. Since the number of particles in Bottle #2 starts out 10,000 and the number for #1 is 10, then that means that at every time step, 1,000 particles are moving from Bottle #2 to #1, while only 1 particle moves from Bottle #1 to #2. Pretty quickly, we see the numebr of particles in each bottle equalizing!
+That's because in the high pressure bottle, there are so many particles making the same dice rolls. Let's say the transition probability is 10%– then, on average, 10% of the particles should move from Bottle #2 to bottle #1, and back. Since the number of particles in Bottle #2 starts out 10,000 and the number for #1 is 10, then that means that at every time step, 1,000 particles are moving from Bottle #2 to #1, while only 1 particle moves from Bottle #1 to #2. Pretty quickly, we see the number of particles in each bottle equalizing!
 
 Play with the simulation yourself to experiment with more values. To run the sim, do (you'll need matplotlib):
 
